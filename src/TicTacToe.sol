@@ -76,11 +76,15 @@ contract TicTacToe {
         // used to check if some player has won in the diagonal lines
         if ((board[0][0] == board[1][1]) && (board[1][1] == board[2][2]) ||
             (board[0][2] == board[1][1]) && (board[1][1] == board[2][0])) {     
-            if (board[0][0] != 0) {
+            if (board[1][1] != 0) {
                 return true;
             }
         }
 
         return false;
+    }
+
+    function getBoard() external view returns (uint8[3][3] memory) {
+        return board;
     }
 }
